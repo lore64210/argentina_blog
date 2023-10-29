@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'argentina_blog.wsgi.app'
+WSGI_APPLICATION = 'argentina_blog.wsgi.application'
 
 
 # Database
