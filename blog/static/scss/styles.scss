@@ -1,0 +1,208 @@
+$base-color-1: #213555;
+$base-color-2: #4f709c;
+$base-color-3: #003566;
+$base-color-4: #e5d283;
+$border-color: $base-color-2;
+$background-color: #f0f0f0;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap");
+
+body {
+    background-color: $background-color;
+    color: $base-color-1;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: $base-color-2;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em 0 1em;
+    border-bottom: 1px solid $border-color;
+    background-color: $base-color-3;
+    position: fixed;
+    width: 100%;
+    a {
+        color: $base-color-4;
+        padding: 0.25em;
+        transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+        &:hover {
+            background-color: $base-color-4;
+            color: $base-color-1;
+            .title {
+                color: $base-color-1;
+            }
+        }
+        .title {
+            transition: background-color 0.25s ease-in-out,
+                color 0.25s ease-in-out;
+            color: $base-color-4;
+        }
+    }
+    nav {
+        font-size: 1.5rem;
+        width: 30%;
+        display: flex;
+        justify-content: space-around;
+        margin-right: 1em;
+    }
+}
+
+.main {
+    flex-grow: 1;
+    margin-top: 5em;
+}
+
+.footer {
+    height: 50px;
+    display: flex;
+    width: 100%;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid $border-color;
+    background-color: $base-color-1;
+    color: $base-color-4;
+}
+
+.list-container {
+    margin-bottom: 4em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    padding: 1em;
+}
+
+.card {
+    text-align: center;
+    background-color: $background-color;
+    box-shadow: 18px 28px 60px -33px $base-color-1;
+    -webkit-box-shadow: 18px 28px 60px -33px $base-color-1;
+    -moz-box-shadow: 18px 28px 60px -33px $base-color-1;
+    transition: box-shadow 0.5s ease-in-out;
+    &:hover {
+        box-shadow: 18px 28px 69px -2px $base-color-1;
+        -webkit-box-shadow: 18px 28px 69px -2px $base-color-1;
+        -moz-box-shadow: 18px 28px 69px -2px $base-color-1;
+    }
+    img {
+        width: 100%;
+        height: 25vw;
+    }
+    padding-bottom: 0.5em;
+}
+
+.page-title {
+    padding: 1em;
+}
+
+.category-grid {
+    grid-template-columns: repeat(5, 1fr);
+    margin-bottom: 2em;
+}
+
+.category-card {
+    img {
+        height: 10vw;
+    }
+}
+
+.pagination {
+    margin-bottom: 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    a {
+        padding: 0.5em;
+        margin: 0.5em;
+        color: $base-color-2;
+        transition: background-color 0.25s ease-in-out;
+        background-color: $background-color;
+        &.current-page {
+            background-color: $base-color-4;
+        }
+        &:hover {
+            background-color: $base-color-4;
+        }
+    }
+}
+
+.post-container {
+    margin: 2em;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    aside {
+        // styling for ads
+    }
+    .post-content {
+        margin: 2em;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        img {
+            max-width: 75%;
+        }
+    }
+}
+
+.recomendations-title {
+    margin-left: 2em;
+}
+@media screen and (max-width: 600px) {
+    .header {
+        a {
+            .title {
+                font-size: 1rem;
+            }
+        }
+        nav {
+            width: auto;
+            font-size: 0.75rem;
+            margin-right: 3em;
+        }
+    }
+    .grid {
+        grid-template-columns: 1fr;
+        grid-row-gap: 3em;
+        padding: 1em;
+    }
+    .card {
+        img {
+            height: 35vh;
+        }
+    }
+    .post-container {
+        margin-top: 0;
+        article {
+            width: 80vw;
+            .post-content {
+                width: 100%;
+                margin: 0;
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    .recomendations-title {
+        margin-left: 1em;
+    }
+}

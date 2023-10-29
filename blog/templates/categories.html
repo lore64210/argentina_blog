@@ -1,0 +1,13 @@
+{% extends "layout.html" %} {% block body %}
+<h2 class="page-title">Categorias:</h2>
+<div class="grid category-grid">
+    {% for category in categories %}
+    <a href="{% url 'filtered_posts' category.label %}">
+        <div class="card category-card">
+            <img src="{{category.thumbnail.url}}" alt="{{category.label}}" />
+            <h3>{{ category.label }}</h3>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

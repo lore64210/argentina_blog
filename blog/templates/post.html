@@ -1,0 +1,10 @@
+{% extends "layout.html" %} {% block body %}
+<div class="post-container">
+    <article>
+        <h2 class="post-title">{{ post.title }}</h2>
+        <div class="post-content">{{post.content.html|safe}}</div>
+    </article>
+    <aside></aside>
+</div>
+<h3 class="recomendations-title">Tambien te puede interesar:</h3>
+{% endblock %}
