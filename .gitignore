@@ -2,3 +2,5 @@
 /blog/__pycache__
 /blog/images
 dbsqlite3
+/media
+/images
