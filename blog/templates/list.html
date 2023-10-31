@@ -1,6 +1,17 @@
 {% extends "layout.html" %} {% block body %}
-
-<h2 class="page-title">Posts:</h2>
+{%if show_main_content%}
+<div class="main-content">
+    <div class="main-content-image" style="background-image: url({{main_content.0.thumbnail.url}});" />
+</div>
+<div class="main-content-mini-image-list">
+{% for post in main_content %}
+    <div class="main-content-mini-image">
+        <img src="{{post.thumbnail.url}}" alt="{{post.title}}" onmouseover="setMainImage('{{post.thumbnail.url}}')" />
+    </div>
+{% endfor %}
+</div>
+{%endif%}
+<h2 class="page-title">Ultimos posts:</h2>
 <div class="grid list-container">
     {% for post in page_obj.object_list %}
     <a href="{%url 'post' post.id%}">

@@ -24,6 +24,7 @@ a {
   background-color: #003566;
   position: fixed;
   width: 100%;
+  z-index: 1000;
 }
 
 .header a {
@@ -55,7 +56,6 @@ a {
 }
 
 .main {
-  flex-grow: 1;
   margin-top: 5em;
 }
 
@@ -70,6 +70,48 @@ a {
   border-top: 1px solid #4f709c;
   background-color: #213555;
   color: #e5d283;
+}
+
+.main-content {
+  margin-top: calc(2vh - 1px);
+  position: relative;
+}
+
+.main-content .main-content-image {
+  height: calc(85vh - 100px);
+  background-size: 110%;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all 0.25s ease;
+  background-position: center center;
+}
+
+.main-content .main-content-image:hover {
+  background-size: 100%;
+}
+
+.main-content-mini-image-list {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #213555;
+}
+
+.main-content-mini-image-list .main-content-mini-image {
+  height: 100%;
+  width: 10vw;
+}
+
+.main-content-mini-image-list .main-content-mini-image img {
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.main-content-mini-image-list .main-content-mini-image img:hover {
+  opacity: 1;
 }
 
 .list-container {
@@ -107,6 +149,7 @@ a {
 
 .page-title {
   padding: 1em;
+  margin-top: 1em;
 }
 
 .category-grid {
@@ -172,6 +215,19 @@ a {
     width: auto;
     font-size: 0.75rem;
     margin-right: 3em;
+  }
+  .main {
+    margin-top: calc(3em - 6px);
+  }
+  .main-content .main-content-image {
+    height: 50vh;
+    background-size: cover;
+  }
+  .main-content .main-content-image:hover {
+    background-size: cover;
+  }
+  .main-content-mini-image-list {
+    height: 15vw;
   }
   .grid {
     grid-template-columns: 1fr;
