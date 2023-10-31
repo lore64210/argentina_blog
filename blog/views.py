@@ -5,7 +5,7 @@ import math
 
 def categories(request):
     return render(request, "categories.html", {
-        "categories": Category.objects.all()
+        "categories": Category.objects.all().order_by('start_date')
     })
 
 def filteredPosts(request, category = None):
