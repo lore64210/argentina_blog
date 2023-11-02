@@ -5,7 +5,7 @@
         style="background-image: url('{{categories.0.thumbnail.url}}')"
     ></div>
     {% for category in categories %} {% if forloop.counter|divisibleby:2 %}
-    <div class="timeline-item">
+    <a href="{% url 'filtered_posts' category.label %}" class="timeline-item">
         <div class="timeline-item-text-container">
             <h2 class="timeline-item-title">{{category.label}}</h2>
             {%if not category.start_date%}
@@ -25,9 +25,12 @@
             alt="{{category.label}}"
             class="timeline-item-image"
         />
-    </div>
+    </a>
     {%else%}
-    <div class="timeline-item reversed">
+    <a
+        href="{% url 'filtered_posts' category.label %}"
+        class="timeline-item reversed"
+    >
         <img
             src="{{category.thumbnail.url}}"
             alt="{{category.label}}"
@@ -47,7 +50,7 @@
             </h3>
             {%endif%}
         </div>
-    </div>
+    </a>
     {%endif%} {% endfor %}
 </div>
 {% endblock %}
