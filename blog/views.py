@@ -4,8 +4,10 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import math
 
 def categories(request):
+    categories = Category.objects.all().order_by('start_date')
+    print(categories[0].start_date)
     return render(request, "categories.html", {
-        "categories": Category.objects.all().order_by('start_date')
+        "categories": categories
     })
 
 def filteredPosts(request, category = None):

@@ -1,13 +1,53 @@
 {% extends "layout.html" %} {% block body %}
-<h2 class="page-title">Categorias:</h2>
-<div class="grid category-grid">
-    {% for category in categories %}
-    <a href="{% url 'filtered_posts' category.label %}">
-        <div class="card category-card">
-            <img src="{{category.thumbnail.url}}" alt="{{category.label}}" />
-            <h3>{{ category.label }}</h3>
+<div class="timeline-items-container">
+    <div
+        class="timeline-background"
+        style="background-image: url('{{categories.0.thumbnail.url}}')"
+    ></div>
+    {% for category in categories %} {% if forloop.counter|divisibleby:2 %}
+    <div class="timeline-item">
+        <div class="timeline-item-text-container">
+            <h2 class="timeline-item-title">{{category.label}}</h2>
+            {%if not category.start_date%}
+            <h3>Origen desconocido - {{category.end_date|date:'Y'}}</h3>
+            {%elif not category.end_date%}
+            <h3>{{category.start_date|date:'Y'}} - Actualidad</h3>
+            {%else%}
+            <h3>
+                {{category.start_date|date:'Y'}} -
+                {{category.end_date|date:'Y'}}
+            </h3>
+            {%endif%}
         </div>
-    </a>
-    {% endfor %}
+        <div class="timeline-line"></div>
+        <img
+            src="{{category.thumbnail.url}}"
+            alt="{{category.label}}"
+            class="timeline-item-image"
+        />
+    </div>
+    {%else%}
+    <div class="timeline-item reversed">
+        <img
+            src="{{category.thumbnail.url}}"
+            alt="{{category.label}}"
+            class="timeline-item-image"
+        />
+        <div class="timeline-line"></div>
+        <div class="timeline-item-text-container">
+            <h2 class="timeline-item-title">{{category.label}}</h2>
+            {%if not category.start_date%}
+            <h3>Origen desconocido - {{category.end_date|date:'Y'}}</h3>
+            {%elif not category.end_date%}
+            <h3>{{category.start_date|date:'Y'}} - Actualidad</h3>
+            {%else%}
+            <h3>
+                {{category.start_date|date:'Y'}} -
+                {{category.end_date|date:'Y'}}
+            </h3>
+            {%endif%}
+        </div>
+    </div>
+    {%endif%} {% endfor %}
 </div>
 {% endblock %}
