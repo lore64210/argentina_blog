@@ -1,7 +1,7 @@
-$base-color-1: #213555;
-$base-color-2: #4f709c;
-$base-color-3: #003566;
-$base-color-4: #e5d283;
+$base-color-1: #252b48;
+$base-color-2: #445069;
+$base-color-3: #5b9a8b;
+$base-color-4: #f7e987;
 $border-color: $base-color-2;
 $background-color: #f0f0f0;
 
@@ -34,7 +34,7 @@ a {
     width: 100%;
     z-index: 1000;
     a {
-        color: $base-color-4;
+        color: gainsboro;
         padding: 0.25em;
         transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
         &:hover {
@@ -47,7 +47,7 @@ a {
         .title {
             transition: background-color 0.25s ease-in-out,
                 color 0.25s ease-in-out;
-            color: $base-color-4;
+            color: gainsboro;
         }
     }
     nav {
@@ -96,7 +96,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #213555;
+    background-color: $base-color-1;
     .main-content-mini-image {
         height: 100%;
         width: 10vw;
@@ -113,7 +113,7 @@ a {
 }
 
 .list-container {
-    background-color: #213555;
+    background-color: $base-color-1;
     color: gainsboro;
     padding-bottom: 0.5em;
     min-height: 90vh;
@@ -133,7 +133,7 @@ a {
     height: 25vw;
     &:hover {
         h3 {
-            background-color: rgba(0, 53, 102, 1);
+            background-color: $base-color-2;
             padding: 2em 0 2em 0;
         }
     }
@@ -145,7 +145,7 @@ a {
         transition: all 0.25s ease-in-out;
         position: absolute;
         bottom: 0;
-        background-color: rgba(0, 53, 102, 0.8);
+        background-color: rgba(68, 80, 105, 0.8);
         width: 100%;
         color: gainsboro;
         margin: 0;
@@ -246,7 +246,7 @@ a {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0, 53, 102, 0.8);
+            background-color: rgba(68, 80, 105, 0.8);
             color: gainsboro;
             padding: 1em;
             text-align: center;

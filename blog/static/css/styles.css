@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap");
 body {
   background-color: #f0f0f0;
-  color: #213555;
+  color: #252b48;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   min-height: 100vh;
   margin: 0;
@@ -11,7 +11,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #4f709c;
+  color: #445069;
 }
 
 .header {
@@ -20,31 +20,31 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 0 1em 0 1em;
-  border-bottom: 1px solid #4f709c;
-  background-color: #003566;
+  border-bottom: 1px solid #445069;
+  background-color: #5b9a8b;
   position: fixed;
   width: 100%;
   z-index: 1000;
 }
 
 .header a {
-  color: #e5d283;
+  color: gainsboro;
   padding: 0.25em;
   transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
 .header a:hover {
-  background-color: #e5d283;
-  color: #213555;
+  background-color: #f7e987;
+  color: #252b48;
 }
 
 .header a:hover .title {
-  color: #213555;
+  color: #252b48;
 }
 
 .header a .title {
   transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
-  color: #e5d283;
+  color: gainsboro;
 }
 
 .header nav {
@@ -67,9 +67,9 @@ a {
   right: 0;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #4f709c;
-  background-color: #213555;
-  color: #e5d283;
+  border-top: 1px solid #445069;
+  background-color: #252b48;
+  color: #f7e987;
 }
 
 .main-content {
@@ -95,7 +95,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #213555;
+  background-color: #252b48;
 }
 
 .main-content-mini-image-list .main-content-mini-image {
@@ -115,7 +115,7 @@ a {
 }
 
 .list-container {
-  background-color: #213555;
+  background-color: #252b48;
   color: gainsboro;
   padding-bottom: 0.5em;
   min-height: 90vh;
@@ -137,7 +137,7 @@ a {
 }
 
 .card:hover h3 {
-  background-color: #003566;
+  background-color: #445069;
   padding: 2em 0 2em 0;
 }
 
@@ -150,7 +150,7 @@ a {
   transition: all 0.25s ease-in-out;
   position: absolute;
   bottom: 0;
-  background-color: rgba(0, 53, 102, 0.8);
+  background-color: rgba(68, 80, 105, 0.8);
   width: 100%;
   color: gainsboro;
   margin: 0;
@@ -188,12 +188,12 @@ a {
 }
 
 .pagination a.current-page {
-  background-color: #e5d283;
-  color: #213555;
+  background-color: #f7e987;
+  color: #252b48;
 }
 
 .pagination a:hover {
-  background-color: #4f709c;
+  background-color: #445069;
   color: gainsboro;
 }
 
@@ -255,7 +255,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 53, 102, 0.8);
+  background-color: rgba(68, 80, 105, 0.8);
   color: gainsboro;
   padding: 1em;
   text-align: center;
@@ -273,7 +273,7 @@ a {
 .timeline-items-container .timeline-item .timeline-line {
   height: 90vh;
   width: 5px;
-  background-color: #003566;
+  background-color: #5b9a8b;
 }
 
 .timeline-items-container .timeline-item .timeline-item-image {
