@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap");
 body {
-  background-color: #f0f0f0;
+  background-color: #252b48;
   color: #252b48;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   min-height: 100vh;
@@ -197,10 +197,17 @@ a {
   color: gainsboro;
 }
 
+.main-img {
+  width: 100vw;
+  height: 75vh;
+}
+
 .post-container {
   margin: 2em;
+  margin-top: 0;
   display: grid;
   grid-template-columns: 4fr 1fr;
+  color: gainsboro;
 }
 
 .post-container .post-content {

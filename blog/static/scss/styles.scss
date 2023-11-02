@@ -3,7 +3,7 @@ $base-color-2: #445069;
 $base-color-3: #5b9a8b;
 $base-color-4: #f7e987;
 $border-color: $base-color-2;
-$background-color: #f0f0f0;
+$background-color: $base-color-1;
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap");
 
@@ -192,10 +192,17 @@ a {
     }
 }
 
+.main-img {
+    width: 100vw;
+    height: 75vh;
+}
 .post-container {
     margin: 2em;
+    margin-top: 0;
     display: grid;
     grid-template-columns: 4fr 1fr;
+    color: gainsboro;
+
     aside {
         // styling for ads
     }
