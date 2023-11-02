@@ -1,9 +1,9 @@
-$base-color-1: #213555;
-$base-color-2: #4f709c;
-$base-color-3: #003566;
-$base-color-4: #e5d283;
+$base-color-1: #252b48;
+$base-color-2: #445069;
+$base-color-3: #5b9a8b;
+$base-color-4: #f7e987;
 $border-color: $base-color-2;
-$background-color: #f0f0f0;
+$background-color: $base-color-1;
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap");
 
@@ -32,8 +32,9 @@ a {
     background-color: $base-color-3;
     position: fixed;
     width: 100%;
+    z-index: 1000;
     a {
-        color: $base-color-4;
+        color: gainsboro;
         padding: 0.25em;
         transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
         &:hover {
@@ -46,7 +47,7 @@ a {
         .title {
             transition: background-color 0.25s ease-in-out,
                 color 0.25s ease-in-out;
-            color: $base-color-4;
+            color: gainsboro;
         }
     }
     nav {
@@ -59,7 +60,6 @@ a {
 }
 
 .main {
-    flex-grow: 1;
     margin-top: 5em;
 }
 
@@ -76,39 +76,86 @@ a {
     color: $base-color-4;
 }
 
+.main-content {
+    margin-top: calc(2vh - 1px);
+    position: relative;
+    .main-content-image {
+        height: calc(85vh - 100px);
+        background-size: 110%;
+        background-repeat: no-repeat;
+        position: relative;
+        transition: all 0.25s ease;
+        background-position: center center;
+        &:hover {
+            background-size: 100%;
+        }
+    }
+}
+.main-content-mini-image-list {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $base-color-1;
+    .main-content-mini-image {
+        height: 100%;
+        width: 10vw;
+        img {
+            opacity: 0.5;
+            height: 100%;
+            width: 100%;
+            transition: opacity 0.25s ease-in-out;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
 .list-container {
-    margin-bottom: 4em;
+    background-color: $base-color-1;
+    color: gainsboro;
+    padding-bottom: 0.5em;
+    min-height: 90vh;
+    h2 {
+        margin: 0;
+    }
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
-    padding: 1em;
 }
 
 .card {
     text-align: center;
-    background-color: $background-color;
-    box-shadow: 18px 28px 60px -33px $base-color-1;
-    -webkit-box-shadow: 18px 28px 60px -33px $base-color-1;
-    -moz-box-shadow: 18px 28px 60px -33px $base-color-1;
-    transition: box-shadow 0.5s ease-in-out;
+    position: relative;
+    height: 25vw;
     &:hover {
-        box-shadow: 18px 28px 69px -2px $base-color-1;
-        -webkit-box-shadow: 18px 28px 69px -2px $base-color-1;
-        -moz-box-shadow: 18px 28px 69px -2px $base-color-1;
+        h3 {
+            background-color: $base-color-2;
+            padding: 2em 0 2em 0;
+        }
     }
     img {
         width: 100%;
         height: 25vw;
     }
-    padding-bottom: 0.5em;
+    h3 {
+        transition: all 0.25s ease-in-out;
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(68, 80, 105, 0.8);
+        width: 100%;
+        color: gainsboro;
+        margin: 0;
+        padding: 1em 0 1em 0;
+    }
 }
 
 .page-title {
     padding: 1em;
+    margin-top: 1em;
 }
 
 .category-grid {
@@ -123,7 +170,7 @@ a {
 }
 
 .pagination {
-    margin-bottom: 2em;
+    padding-bottom: 1em;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -132,22 +179,30 @@ a {
     a {
         padding: 0.5em;
         margin: 0.5em;
-        color: $base-color-2;
+        color: gainsboro;
         transition: background-color 0.25s ease-in-out;
-        background-color: $background-color;
         &.current-page {
             background-color: $base-color-4;
+            color: $base-color-1;
         }
         &:hover {
-            background-color: $base-color-4;
+            background-color: $base-color-2;
+            color: gainsboro;
         }
     }
 }
 
+.main-img {
+    width: 100vw;
+    height: 75vh;
+}
 .post-container {
     margin: 2em;
+    margin-top: 0;
     display: grid;
     grid-template-columns: 4fr 1fr;
+    color: gainsboro;
+
     aside {
         // styling for ads
     }
@@ -165,8 +220,96 @@ a {
 .recomendations-title {
     margin-left: 2em;
 }
+
+.timeline-items-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    .timeline-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: background-image 1s ease-in-out;
+        background-position: center center;
+    }
+    .timeline-item {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        position: relative;
+        .timeline-item-text-container {
+            position: absolute;
+            left: calc(50vw - 12em);
+            transition: all 0.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(68, 80, 105, 0.8);
+            color: gainsboro;
+            padding: 1em;
+            text-align: center;
+            .timeline-item-title {
+                width: 10em;
+                margin: 0;
+            }
+            h3 {
+                margin: 0;
+            }
+        }
+
+        .timeline-line {
+            height: 90vh;
+            width: 5px;
+            background-color: $base-color-3;
+        }
+        .timeline-item-image {
+            width: 25vw;
+            height: 25vw;
+            position: absolute;
+            left: calc(50vw + 1em);
+            transition: all 1s ease-in-out;
+        }
+        &.reversed {
+            .timeline-item-text-container {
+                left: calc(50vw + 1em);
+            }
+            .timeline-item-image {
+                left: calc(25vw - 2em);
+            }
+            &.active {
+                .timeline-item-text-container {
+                    left: calc(50vw + 3em);
+                }
+                .timeline-item-image {
+                    left: calc(20vw - 3em);
+                }
+            }
+        }
+        &.active {
+            .timeline-item-text-container {
+                left: calc(50vw - 20em);
+            }
+            .timeline-item-image {
+                width: 30vw;
+                height: 30vw;
+                left: calc(50vw + 2em);
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 600px) {
     .header {
+        height: 3em;
         a {
             .title {
                 font-size: 1rem;
@@ -178,12 +321,26 @@ a {
             margin-right: 3em;
         }
     }
+    .main {
+        margin-top: 2em;
+    }
+    .main-content {
+        .main-content-image {
+            height: 50vh;
+            background-size: cover;
+            &:hover {
+                background-size: cover;
+            }
+        }
+    }
+    .main-content-mini-image-list {
+        height: 15vw;
+    }
     .grid {
         grid-template-columns: 1fr;
-        grid-row-gap: 3em;
-        padding: 1em;
     }
     .card {
+        height: 35vh;
         img {
             height: 35vh;
         }
@@ -204,5 +361,55 @@ a {
 
     .recomendations-title {
         margin-left: 1em;
+    }
+
+    .timeline-items-container {
+        .timeline-background {
+            top: 3em;
+        }
+        .timeline-item {
+            .timeline-item-text-container {
+                left: 5vw;
+                max-width: 35vw;
+                .timeline-item-title {
+                    width: 35vw;
+                }
+            }
+            .timeline-line {
+                height: 70vh;
+            }
+            .timeline-item-image {
+                left: calc(50vw + 1em);
+            }
+            &.reversed {
+                .timeline-item-text-container {
+                    left: 50vw;
+                    text-align: center;
+                }
+
+                .timeline-item-image {
+                    left: calc(25vw - 2em);
+                }
+                &.active {
+                    .timeline-item-text-container {
+                        left: calc(50vw + 1em);
+                    }
+                    .timeline-item-image {
+                        left: calc(15vw - 2em);
+                    }
+                }
+            }
+            &.active {
+                .timeline-item-text-container {
+                    left: calc(50vw - 10.5em);
+                }
+
+                .timeline-item-image {
+                    left: calc(50vw + 1em);
+                    width: 40vw;
+                    height: 40vw;
+                }
+            }
+        }
     }
 }
