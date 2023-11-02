@@ -11,8 +11,9 @@
 {% endfor %}
 </div>
 {%endif%}
+<div class="list-container">
 <h2 class="page-title">Ultimos posts:</h2>
-<div class="grid list-container">
+<div class="grid">
     {% for post in page_obj.object_list %}
     <a href="{%url 'post' post.id%}">
         <div class="card">
@@ -29,4 +30,5 @@
     {% endfor %}
 </div>
 {%endif%}
+</div>
 {% endblock %}

@@ -115,36 +115,46 @@ a {
 }
 
 .list-container {
-  margin-bottom: 4em;
+  background-color: #213555;
+  color: gainsboro;
+  padding-bottom: 0.5em;
+  min-height: 90vh;
+}
+
+.list-container h2 {
+  margin: 0;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 1em;
-  grid-row-gap: 1em;
-  padding: 1em;
 }
 
 .card {
   text-align: center;
-  background-color: #f0f0f0;
-  box-shadow: 18px 28px 60px -33px #213555;
-  -webkit-box-shadow: 18px 28px 60px -33px #213555;
-  -moz-box-shadow: 18px 28px 60px -33px #213555;
-  transition: box-shadow 0.5s ease-in-out;
-  padding-bottom: 0.5em;
+  position: relative;
+  height: 25vw;
 }
 
-.card:hover {
-  box-shadow: 18px 28px 69px -2px #213555;
-  -webkit-box-shadow: 18px 28px 69px -2px #213555;
-  -moz-box-shadow: 18px 28px 69px -2px #213555;
+.card:hover h3 {
+  background-color: #003566;
+  padding: 2em 0 2em 0;
 }
 
 .card img {
   width: 100%;
   height: 25vw;
+}
+
+.card h3 {
+  transition: all 0.25s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 53, 102, 0.8);
+  width: 100%;
+  color: gainsboro;
+  margin: 0;
+  padding: 1em 0 1em 0;
 }
 
 .page-title {
@@ -162,7 +172,7 @@ a {
 }
 
 .pagination {
-  margin-bottom: 2em;
+  padding-bottom: 1em;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -173,17 +183,18 @@ a {
 .pagination a {
   padding: 0.5em;
   margin: 0.5em;
-  color: #4f709c;
+  color: gainsboro;
   transition: background-color 0.25s ease-in-out;
-  background-color: #f0f0f0;
 }
 
 .pagination a.current-page {
   background-color: #e5d283;
+  color: #213555;
 }
 
 .pagination a:hover {
-  background-color: #e5d283;
+  background-color: #4f709c;
+  color: gainsboro;
 }
 
 .post-container {
@@ -312,7 +323,7 @@ a {
     margin-right: 3em;
   }
   .main {
-    margin-top: calc(3em - 6px);
+    margin-top: 2em;
   }
   .main-content .main-content-image {
     height: 50vh;
@@ -326,8 +337,9 @@ a {
   }
   .grid {
     grid-template-columns: 1fr;
-    grid-row-gap: 3em;
-    padding: 1em;
+  }
+  .card {
+    height: 35vh;
   }
   .card img {
     height: 35vh;
@@ -353,9 +365,10 @@ a {
   }
   .timeline-items-container .timeline-item .timeline-item-text-container {
     left: 5vw;
+    max-width: 35vw;
   }
   .timeline-items-container .timeline-item .timeline-item-text-container .timeline-item-title {
-    width: 45vw;
+    width: 35vw;
   }
   .timeline-items-container .timeline-item .timeline-line {
     height: 70vh;
@@ -377,7 +390,7 @@ a {
     left: calc(15vw - 2em);
   }
   .timeline-items-container .timeline-item.active .timeline-item-text-container {
-    left: calc(50vw - 10em);
+    left: calc(50vw - 10.5em);
   }
   .timeline-items-container .timeline-item.active .timeline-item-image {
     left: calc(50vw + 1em);

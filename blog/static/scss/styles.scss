@@ -113,34 +113,44 @@ a {
 }
 
 .list-container {
-    margin-bottom: 4em;
+    background-color: #213555;
+    color: gainsboro;
+    padding-bottom: 0.5em;
+    min-height: 90vh;
+    h2 {
+        margin: 0;
+    }
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
-    padding: 1em;
 }
 
 .card {
     text-align: center;
-    background-color: $background-color;
-    box-shadow: 18px 28px 60px -33px $base-color-1;
-    -webkit-box-shadow: 18px 28px 60px -33px $base-color-1;
-    -moz-box-shadow: 18px 28px 60px -33px $base-color-1;
-    transition: box-shadow 0.5s ease-in-out;
+    position: relative;
+    height: 25vw;
     &:hover {
-        box-shadow: 18px 28px 69px -2px $base-color-1;
-        -webkit-box-shadow: 18px 28px 69px -2px $base-color-1;
-        -moz-box-shadow: 18px 28px 69px -2px $base-color-1;
+        h3 {
+            background-color: rgba(0, 53, 102, 1);
+            padding: 2em 0 2em 0;
+        }
     }
     img {
         width: 100%;
         height: 25vw;
     }
-    padding-bottom: 0.5em;
+    h3 {
+        transition: all 0.25s ease-in-out;
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(0, 53, 102, 0.8);
+        width: 100%;
+        color: gainsboro;
+        margin: 0;
+        padding: 1em 0 1em 0;
+    }
 }
 
 .page-title {
@@ -160,7 +170,7 @@ a {
 }
 
 .pagination {
-    margin-bottom: 2em;
+    padding-bottom: 1em;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -169,14 +179,15 @@ a {
     a {
         padding: 0.5em;
         margin: 0.5em;
-        color: $base-color-2;
+        color: gainsboro;
         transition: background-color 0.25s ease-in-out;
-        background-color: $background-color;
         &.current-page {
             background-color: $base-color-4;
+            color: $base-color-1;
         }
         &:hover {
-            background-color: $base-color-4;
+            background-color: $base-color-2;
+            color: gainsboro;
         }
     }
 }
@@ -304,7 +315,7 @@ a {
         }
     }
     .main {
-        margin-top: calc(3em - 6px);
+        margin-top: 2em;
     }
     .main-content {
         .main-content-image {
@@ -320,10 +331,9 @@ a {
     }
     .grid {
         grid-template-columns: 1fr;
-        grid-row-gap: 3em;
-        padding: 1em;
     }
     .card {
+        height: 35vh;
         img {
             height: 35vh;
         }
@@ -353,8 +363,9 @@ a {
         .timeline-item {
             .timeline-item-text-container {
                 left: 5vw;
+                max-width: 35vw;
                 .timeline-item-title {
-                    width: 45vw;
+                    width: 35vw;
                 }
             }
             .timeline-line {
@@ -383,7 +394,7 @@ a {
             }
             &.active {
                 .timeline-item-text-container {
-                    left: calc(50vw - 10em);
+                    left: calc(50vw - 10.5em);
                 }
 
                 .timeline-item-image {
