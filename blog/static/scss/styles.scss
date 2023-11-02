@@ -237,6 +237,7 @@ a {
         background-size: cover;
         transition: background-image 1s ease-in-out;
         background-position: center center;
+        filter: blur(25px);
     }
     .timeline-item {
         width: 100%;
