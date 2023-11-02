@@ -1,6 +1,8 @@
 /__pycache__
 /blog/__pycache__
+/argentina_blog/__pycache__
 /blog/images
-dbsqlite3
 /media
 /images
+/staticfiles_build
+db.sqlite3
