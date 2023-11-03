@@ -38,8 +38,14 @@ def filteredPosts(request, category = None):
     return render(request, 'list.html', context)
 
 def post(request, post):
+    blog_post = Post.objects.get(id = post)
+    for category in blog_post.category.all():
+        print(category)
+    recomendations = Post.objects.filter(category=blog_post.category.all()[0].id).all()
+    recomendations = list(filter(lambda post: post.id != blog_post.id, recomendations))[:3]
     return render(request, "post.html", {
-        "post": Post.objects.get(id = post)
+        "post": blog_post,
+        "recomendations": recomendations
     })
 
 def biographies(request):

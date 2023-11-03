@@ -8,4 +8,15 @@
     <aside></aside>
 </div>
 <h3 class="recomendations-title">Tambien te puede interesar:</h3>
+<div class="grid">
+    {%for post in recomendations%}
+    <a href="{%url 'post' post.id%}">
+        <div class="card">
+            <img src="{{post.thumbnail.url}}" alt="{{post.title}}" />
+            <h3>{{ post.title }}</h3>
+        </div>
+    </a>
+
+    {%endfor%}
+</div>
 {% endblock %}
