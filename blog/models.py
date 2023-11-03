@@ -20,6 +20,7 @@ class Post(models.Model):
     thumbnail = models.ImageField(null=True, blank=True, upload_to="images/")
     content = QuillField(null=True, blank=False)
     is_main_content = models.BooleanField(default = False)
+    is_biography = models.BooleanField(default = False)
     def __str__(self):
         if self.admin_title:
             return self.admin_title 

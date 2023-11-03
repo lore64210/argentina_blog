@@ -27,7 +27,6 @@ def filteredPosts(request, category = None):
         page_obj = p.page(1)
     except EmptyPage:
         page_obj = p.page(p.num_pages)
-    print(list_of_objects.count())
     context = {
         'current_page': page_number,
         'page_obj': page_obj,
@@ -42,6 +41,25 @@ def post(request, post):
     return render(request, "post.html", {
         "post": Post.objects.get(id = post)
     })
+
+def biographies(request):
+    objects_per_page = 9
+    list_of_objects = Post.objects.filter(is_biography=True).all()
+    p = Paginator(list_of_objects, objects_per_page)
+    page_number = request.GET.get('page')
+    try:
+        page_obj = p.get_page(page_number)
+    except PageNotAnInteger:
+        page_obj = p.page(1)
+    except EmptyPage:
+        page_obj = p.page(p.num_pages)
+    context = {
+        'current_page': page_number,
+        'page_obj': page_obj,
+        'show_pagination': list_of_objects.count() > objects_per_page,
+        'range': range(0, math.ceil(list_of_objects.count() / objects_per_page)),
+    }
+    return render(request, 'biographies.html', context)
 
 def summary(request):
     return render(request, "summary.html")

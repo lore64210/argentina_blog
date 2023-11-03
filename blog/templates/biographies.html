@@ -1,0 +1,22 @@
+{% extends "layout.html" %} {% block body %}
+<div class="list-container">
+<h2 class="page-title">Biografias:</h2>
+<div class="grid">
+    {% for post in page_obj.object_list %}
+    <a href="{%url 'post' post.id%}">
+        <div class="card">
+            <img src="{{post.thumbnail.url}}" alt="{{post.title}}" />
+            <h3>{{ post.title }}</h3>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{%if show_pagination%}
+<div class="pagination">
+    {% for i in range %}
+    <a class="{% if current_page|add:"0" == i|add:"1"%}current-page{% endif %}" href="{%url 'filtered_posts' %}?page={{i|add:"1"}}"> {{ i|add:"1" }} </a>
+    {% endfor %}
+</div>
+{%endif%}
+</div>
+{% endblock %}
