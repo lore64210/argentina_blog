@@ -1,10 +1,14 @@
-function setMainImage(backgroundImage) {
-    showImage(backgroundImage);
+function setMainImage(backgroundImage, postId) {
+    showImage(backgroundImage, postId);
 }
 
-function showImage(backgroundImage) {
+function showImage(backgroundImage, postId) {
+    let imageContainer = document.getElementsByClassName(
+        "main-content-image-container"
+    )[0];
     let image = document.getElementsByClassName("main-content-image")[0];
     image.style.backgroundImage = `url('${backgroundImage}')`;
+    imageContainer.href = `/post/${postId}`;
 }
 
 if (window.location.pathname === "/categorias") {
