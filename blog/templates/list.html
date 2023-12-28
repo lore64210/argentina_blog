@@ -2,13 +2,16 @@
 {%if show_main_content%}
 <div class="main-content">
     <a class="main-content-image-container" href="{%url 'post' main_content.0.id%}">
-        <div class="main-content-image" style="background-image: url({{main_content.0.thumbnail.url}});" ></div>
+        <div class="main-content-image" style="background-image: url({{main_content.0.thumbnail.url}});" >
+        <div class="main-content-title"><span class="main-content-title-text">{{main_content.0.title}}</span></div>
+
+        </div>
     </a> 
 </div>
 <div class="main-content-mini-image-list">
 {% for post in main_content %}
     <a href="{%url 'post' post.id%}" class="main-content-mini-image">
-        <img src="{{post.thumbnail.url}}" alt="{{post.title}}" onmouseover="setMainImage('{{post.thumbnail.url}}', '{{post.id}}')" />
+        <img src="{{post.thumbnail.url}}" alt="{{post.title}}" onmouseover="setMainImage('{{post.thumbnail.url}}', '{{post.id}}', '{{post.title}}')" />
     </a>
 {% endfor %}
 </div>
